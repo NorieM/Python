@@ -4,6 +4,8 @@ Download daily zip file from Scottish Road Works Register
 
 @author: NMacEwan
 """
+from datetime import datetime, timedelta
+import os
 import zipfile
 import json
 import requests
@@ -13,7 +15,6 @@ import requests
 # https://downloads.srwr.scot//export/api/v1/daily
 
 url = 'https://downloads.srwr.scot//export/api/v1/daily'
-
 
 geturl = requests.get(url, allow_redirects=True)
 
@@ -26,13 +27,19 @@ print(downloadurl)
 # request daily file
 getzip = requests.get(downloadurl, allow_redirects=True)
 
-
-# write data to zip file
-with open('Daily.zip', 'wb') as file:
+# write data to zip file in current directory
+with open('../Daily.zip', 'wb') as file:
     file.write(getzip.content)
 
 # unzip downloaded file
+with zipfile.ZipFile('../Daily.zip', 'r') as zip_file:
+    name = zip_file.namelist()[0]
+    print(name)
+    zip_file.extractall('../')
 
-with zipfile.ZipFile('Daily.zip', 'r') as zip_file:
-    zip_file.extractall()
-    
+extractdate = datetime.today() - timedelta(days=1)
+
+newname = 'Daily Download-'+ extractdate.strftime('%Y-%m-%d') +'.csv'
+
+os.rename('../'+name, '../'+newname)
+
