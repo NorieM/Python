@@ -2,3 +2,14 @@ body{
     font-family:Helvetica;
 }
 
+.post {
+    display: block;
+}
+
+.title {
+    display: block;
+}
+
+.comment {
+    display: block;
+}
