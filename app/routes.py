@@ -11,8 +11,10 @@ def index():
     posts  = [
 
         {   'author':{'username':'John'},
+            'title':'Portland visit',
             'body':'Beautiful day in Portland!'},
         {   'author':{'username':'Satan'},
+            'title' :'Going to hell',
             'body':'Fine day in hell!'}
     ]
 

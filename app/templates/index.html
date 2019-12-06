@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   
-    <title>{{ title }} - Microblog</title>
-    <link rel= "stylesheet" type= "text/css" href= "./static/css/main.css">
-</head>
-<body>
-    <h1>Hello, {{ user.username }}!</h1>
-    <div class="posts">
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
     {% for post in posts %}
     <div class="post">
-        <div class="title">
-            {{ post.author.username}}
+        <div class="header">
+            <div class="title">
+                {{ post.title}}
+            </div>
+
+            <div class="author">
+                {{ post.author.username }}
+            </div>
         </div>
-        <div class="comment">
-            {{ post.body}}
-        </div>
-    </div>
+         <div class="comment">
+             {{ post.body }}
+         </div>
+        
     </div>
     {% endfor %}
-
-</body>
-</html>
+{% endblock %}

@@ -3,13 +3,27 @@ body{
 }
 
 .post {
-    display: block;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius:10px;
+    height: 100;
+    width:50%;
+}
+
+.author {
+
+    float:right;
 }
 
 .title {
-    display: block;
+
+    float:left;
 }
 
 .comment {
-    display: block;
+    background-color: white;
+    height:60px;
+}
+.header {
+    height:30px;
 }
