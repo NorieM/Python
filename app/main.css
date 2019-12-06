@@ -1,0 +1,35 @@
+body {
+    font-family:Helvetica;
+} 
+
+div {
+    padding: 5px;
+}
+
+.post {
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius:10px;
+    height: 100;
+    width:50%;
+}
+
+.author {
+
+    float:right;
+    font-weight:bold;
+}
+
+.title {
+
+    float:left;
+    font-weight:bold;
+}
+
+.comment {
+    background-color: white;
+    height:50px;
+}
+.header {
+    height:30px;
+}
